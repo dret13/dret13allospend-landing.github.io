@@ -44,11 +44,26 @@ section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
 .small{font-size:13px;color:var(--muted)}
 
 /* Footer */
-footer{padding:32px 0;color:var(--muted)}
+footer{
+  padding:32px 0;
+  color:var(--muted)
+}
 
 /* Responsive */
-@media (max-width:920px){.hero{grid-template-columns:1fr;}.screenshot{height:260px}.grid-3{grid-template-columns:1fr 1fr}.logo{width:44px;height:44px}}
-@media (max-width:600px){.grid-3{grid-template-columns:1fr}.container{padding:20px}.hero{padding:24px 0}h2{font-size:28px}}
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr;}
+  .screenshot{height:260px}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .logo{width:44px;height:44px}
+  .btn-primary{width: auto; height: auto;}
+}
+@media (max-width:600px){
+  .grid-3{grid-template-columns:1fr}
+  .container{padding:20px}
+  .hero{padding:24px 0}
+  .btn-primary{width: auto; height: auto;}
+  h2{font-size:28px}
+}
 
 /* tiny form styles */
 form{display:flex;gap:8px}
@@ -205,7 +220,7 @@ input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba
       <section id="download">
         <h3>Get the App</h3>
         <p class="small">Download the Allospend app for iOS. Beta available now — join the waitlist or request an invite for your group.</p>
-        <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; align-items:center">
+        <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; align-items:center; padding: 2%;">
           <!-- <a class="btn" href="#">App Store (coming)</a> -->
           <a class="btn btn-primary" href="#">Join Beta</a>
           <div style="display:flex; gap:12px; align-items:center">
