@@ -5,55 +5,56 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Allospend — Simple money, smarter spending</title>
   <link rel="canonical" href="https://allospend.app/" />
+  <link rel="stylesheet" href="/Users/deandretaylor/Desktop/Allospend/dret13allospend-landing.github.io/style.css" />
   <meta name="description" content="Allospend — a simple finance app + the Dummii sticker to make payments playful. Download the app or buy a sticker." />
 
   <!-- Favicon placeholders: replace with your files in /images -->
   <link rel="icon" href="/images/favicon-32.png" sizes="32x32" />
-<style>
 
-:root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--card:#0b1220;--glass:rgba(255,255,255,0.04)}
-*{box-sizing:border-box}
-body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#e6eef8; background:linear-gradient(180deg,var(--bg),#071127);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:32px}
+  <!-- Basic responsive CSS (single-file for easy editing) -->
+  <style>
+    :root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--card:#0b1220;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#e6eef8; background:linear-gradient(180deg,var(--bg),#071127);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:32px}
 
-/* Header */
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700}
-.brand h1{font-size:18px;margin:0}
-nav{display:flex;gap:18px;align-items:center}
-.btn{padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
-.btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#031127;border:none}
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#031127;border:none}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
-.kicker{color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:12px}
-h2{font-size:38px;line-height:1.03;margin:12px 0}
-p.lead{color:var(--muted);max-width:58ch}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
+    .kicker{color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:12px}
+    h2{font-size:38px;line-height:1.03;margin:12px 0}
+    p.lead{color:var(--muted);max-width:58ch}
 
-/* Card */
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
-.screenshot{width:100%;height:360px;border-radius:12px;background:#061226;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+    /* Card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
+    .screenshot{width:100%;height:360px;border-radius:12px;background:#061226;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
 
-/* Sections */
-section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.feature{background:var(--card);padding:18px;border-radius:12px}
-.small{font-size:13px;color:var(--muted)}
+    /* Sections */
+    section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{background:var(--card);padding:18px;border-radius:12px}
+    .small{font-size:13px;color:var(--muted)}
 
-/* Footer */
-footer{padding:32px 0;color:var(--muted)}
+    /* Footer */
+    footer{padding:32px 0;color:var(--muted)}
 
-/* Responsive */
-@media (max-width:920px){.hero{grid-template-columns:1fr;}.screenshot{height:260px}.grid-3{grid-template-columns:1fr 1fr}.logo{width:44px;height:44px}}
-@media (max-width:600px){.grid-3{grid-template-columns:1fr}.container{padding:20px}.hero{padding:24px 0}h2{font-size:28px}}
+    /* Responsive */
+    @media (max-width:920px){.hero{grid-template-columns:1fr;}.screenshot{height:260px}.grid-3{grid-template-columns:1fr 1fr}.logo{width:44px;height:44px}}
+    @media (max-width:600px){.grid-3{grid-template-columns:1fr}.container{padding:20px}.hero{padding:24px 0}h2{font-size:28px}}
 
-/* tiny form styles */
-form{display:flex;gap:8px}
-input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-
-</style>
+    /* tiny form styles */
+    form{display:flex;gap:8px}
+    input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+  </style>
 
   <!-- Analytics placeholder: Replace with your GA4 tag or Plausible script -->
   <!-- Example GA4 snippet goes here. Replace MEASUREMENT_ID with your ID. -->
