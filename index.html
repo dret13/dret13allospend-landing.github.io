@@ -3,145 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Allospend — Money Made Social</title>
-  <link rel="canonical" href="https://allospend.app/" />
-  <meta name="description" content="Allospend — a simple finance app + the Dummii sticker to make payments playful. Download the app or buy a sticker." />
+  <title>Allospend — Finally, Money Without the Awkwardness</title>
+  <meta name="description" content="Allospend — remove the stress from group spending. No more awkward reminders or messy receipts. Just simple, fun, and fair." />
+  <link rel="icon" href="dret13allospend-landing.github.io/Logosfbd.png" sizes="32x32" />
 
-  <!-- Favicon placeholders: replace with your files in /images -->
-  <link rel="icon" href="/dret13allospend-landing.github.io/Logosfbd.png" sizes="32x32" />
-
-<style>
-
-:root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--card:#0b1220;--glass:rgba(255,255,255,0.04)}
-*{box-sizing:border-box}
-body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#e6eef8; background:linear-gradient(180deg,var(--bg),#071127);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:32px}
-
-/* Header */
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700}
-.brand h1{font-size:18px;margin:0}
-nav{display:flex;gap:18px;align-items:center}
-.btn{padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
-.btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#031127;border:none}
-
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
-.kicker{color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:12px}
-h2{font-size:38px;line-height:1.03;margin:12px 0}
-p.lead{color:var(--muted);max-width:58ch}
-
-/* Card */
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
-.screenshot{width:100%;height:360px;border-radius:12px;background:#061226;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
-
-/* Sections */
-section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.feature{background:var(--card);padding:18px;border-radius:12px}
-.small{font-size:13px;color:var(--muted)}
-
-/* Footer */
-footer{
-  padding:32px 0;
-  color:var(--muted)
-}
-
-/* Responsive */
-@media (max-width:920px){
-  .hero{grid-template-columns:1fr;}
-  .screenshot{height:260px}
-  .grid-3{grid-template-columns:1fr 1fr}
-  .logo{width:44px;height:44px}
-  .btn-primary{width: auto; height: auto;}
-}
-@media (max-width:600px){
-  .grid-3{grid-template-columns:1fr}
-  .container{padding:20px}
-  .hero{padding:24px 0}
-  .btn-primary{width: 100%; height: auto; text-align: center;}
-  .btn{width: 100%; height: auto; text-align: center;}
-  h2{font-size:28px}
-}
-
-/* tiny form styles */
-form{display:flex;gap:8px}
-input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-
-</style>
-
-  <!-- Basic responsive CSS (single-file for easy editing) -->
   <style>
     :root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--card:#0b1220;--glass:rgba(255,255,255,0.04)}
     *{box-sizing:border-box}
     body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#e6eef8; background:linear-gradient(180deg,var(--bg),#071127);-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:32px}
-
-    /* Header */
     header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
     .brand{display:flex;gap:12px;align-items:center}
     .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .brand h1{font-size:18px;margin:0}
     nav{display:flex;gap:18px;align-items:center}
     .btn{padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
     .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#031127;border:none}
-
-    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
     .kicker{color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:12px}
     h2{font-size:38px;line-height:1.03;margin:12px 0}
     p.lead{color:var(--muted);max-width:58ch}
-
-    /* Card */
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
-    .screenshot{width:100%;height:360px;border-radius:12px;background:#061226;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
-
-    /* Sections */
     section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .feature{background:var(--card);padding:18px;border-radius:12px}
     .small{font-size:13px;color:var(--muted)}
-
-    /* Footer */
     footer{padding:32px 0;color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width:920px){.hero{grid-template-columns:1fr;}.screenshot{height:260px}.grid-3{grid-template-columns:1fr 1fr}.logo{width:44px;height:44px}}
-    @media (max-width:600px){.grid-3{grid-template-columns:1fr}.container{padding:20px}.hero{padding:24px 0}h2{font-size:28px}}
-
-    /* tiny form styles */
-    form{display:flex;gap:8px}
-    input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
   </style>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWZ6N8XDDQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CWZ6N8XDDQ');
-</script>
-   
-  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWZ6N8XDDQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CWZ6N8XDDQ');
+  </script>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo">
-          <img src="dret13allospend-landing.github.io/Logosfbd.png" alt="Allospend Logo" >
-        </div>
+        <div class="logo"><img src="dret13allospend-landing.github.io/Logosfbd.png" alt="Allospend Logo"></div>
         <div>
           <h1>Allospend</h1>
-          <div class="small">Money Made Social</div>
+          <div class="small">Finally, Money Without the Awkwardness</div>
         </div>
       </div>
-
       <nav>
         <a href="#features" class="btn">Features</a>
         <a href="#download" class="btn btn-primary">Get the App</a>
@@ -152,32 +60,16 @@ input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba
       <section class="hero">
         <div>
           <div class="kicker">Allospend</div>
-          <h2>Group spending made easy — split bills, manage expenses, or automate tasks.</h2>
-          <!-- <h2>Let us handle the stress of group financing </h2> -->
-          <!-- <h2>Make spending fun again — split bills, send cash, and earn vibes with Dummii.</h2> -->
-          <p class="lead">By combining dynamic and helpful tools, Allospend takes the stress out of group financing. Plus we have the Dummii sticker — our secret weapon. Built for groups, trips, and everyday life.</p>
-
-
-
-          <!-- Newsletter / early access form. Action is set to Formspree placeholder for easy swap -->
-          <div style="margin-top:18px">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
-              <input type="email" name="email" placeholder="Your email for early access" required />
-              <button class="btn btn-primary" type="submit">Join Waitlist</button>
-            </form>
-            <div class="small" style="margin-top:8px">We won't spam — just product updates and launch info.</div>
-          </div>
-
+          <h2>No more chasing friends for money. No more awkward reminders.</h2>
+          <p class="lead">You’ve been there — the dinner bill split, the group trip, the friend who “forgets.” Allospend ends the tension and keeps relationships intact. Plus, our playful Dummii sticker makes paying and getting paid a tap away.</p>
+          <!-- Honeypot field -->
+          <input type="text" name="company" style="display:none">
+          <!-- Google Form Embed -->
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGBeVYlcSK7FoKRgENpWO_h8G99-RmGGaRrv07emI_QmNdew/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0" style="background-color: transparent; border-radius: 10px;">Loading…</iframe>
+          <div class="small">Private & secure. We’ll never share your email.</div>
         </div>
-
         <aside>
-          <div class="card">
-            <div class="screenshot">App screenshot / video goes here</div>
-            <div style="display:flex;gap:8px;margin-top:12px">
-              <div class="small">Fast sign up</div>
-              <div class="small">Group & split tools</div>
-            </div>
-          </div>
+          <div class="card"><div style="color:var(--muted);text-align:center">App preview coming soon</div></div>
         </aside>
       </section>
 
@@ -192,7 +84,6 @@ input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba
               <li>Group ledger & receipts</li>
             </ul>
           </div>
-
           <div class="feature">
             <h3>Split Checks In Person</h3>
             <p class="small">Use our tiny loadable sticker that you can stick on a laptop, water bottle, or wallet. Tap to request money or trigger a custom payment flow.</p>
@@ -202,7 +93,6 @@ input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba
               <li>Works with most phones</li>
             </ul>
           </div>
-
           <div class="feature">
             <h3>Why Allospend?</h3>
             <p class="small">Designed for groups who want to keep money simple and friction-free — from roommates to road trips. Privacy-first, with a playful product touch.</p>
@@ -211,20 +101,11 @@ input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba
         </div>
       </section>
 
-      <!-- <section id="sticker">
-        <h3>Dummii Sticker — $6</h3>
-        <p class="small">Order the Dummii sticker and attach it to your favorite items. Each sticker can be preconfigured to link to your Allospend profile or a payment URL. Shipping worldwide.</p>
-        <div style="display:flex;gap:12px;margin-top:12px">
-          <a class="btn btn-primary" href="#buy">Buy on Store</a>
-          <a class="btn" href="#faq">How it works</a>
-        </div>
-      </section> -->
-
       <section id="download">
         <h3>Get the App</h3>
         <p class="small">Download the Allospend app for iOS. Beta available now — join the waitlist or request an invite for your group.</p>
         <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; align-items:center;">
-          <a class="btn btn-primary" href="#" style="padding: 1%;">Join Beta</a>
+          <a class="btn btn-primary" href="#">Join Beta</a>
           <div style="display:flex; gap:12px; align-items:center">
             <div class="card small">Available on iOS</div>
             <div class="card small">Powered by Allospend</div>
@@ -245,37 +126,18 @@ input[type='email']{flex:1;padding:10px;border-radius:10px;border:1px solid rgba
           </div>
         </div>
       </section>
-
     </main>
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-        <div>
-          <strong>Allospend</strong>
-        </div>
-
+        <div><strong>Allospend</strong></div>
         <div style="display:flex;gap:12px;align-items:center">
           <div class="small">Contact: info@allospend.app</div>
-          <div class="small">Privacy</div>
+          <a href="/privacy.html" class="small">Privacy</a>
         </div>
-        <br>
-        <div>
-          <div class="small" style="align-items:center">&copy; 2025 Allospend. All Rights Reserved.</div>
-        </div>
+        <div class="small">&copy; 2025 Allospend. All Rights Reserved.</div>
       </div>
-
     </footer>
   </div>
-
-  <!-- Minimal JS for mobile nav / small interactions (expand as needed) -->
-  <script>
-    // Tiny helper to swap the Formspree ID: find "your-form-id" in the markup and replace with your Formspree form id.
-    // Deploy notes:
-    // - To use Netlify Forms, replace the <form> with: <form name="waitlist" netlify>
-    // - To host on GitHub Pages, push this file to your repo's root and set Pages to serve from main branch.
-
-    // Example: local preview instruction
-    console.log('Allospend template loaded — edit the HTML to add your real images, links, and analytics ID.');
-  </script>
 </body>
 </html>
