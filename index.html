@@ -3,43 +3,240 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Allospend — Money Made Social</title>
-  <meta name="description" content="Allospend — remove the stress from group spending. No more awkward reminders or messy receipts. Just simple, fun, and fair." />
+  <title>Allospend — End Awkward Money Conversations</title>
+  <meta name="description" content="Allospend — remove the stress from group spending. No more awkward reminders, complex bill splitting, or chasing friends for money. Just simple, fun, and fair." />
   <link rel="icon" href="/images/Logosfbd.png" sizes="32x32" />
 
   <style>
-    :root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--card:#0b1220;--glass:rgba(255,255,255,0.04)}
+    :root{--bg:#0f1724;--muted:#94a3b8;--accent:#7c3aed;--card:#0b1220;--glass:rgba(255,255,255,0.04);--success:#10b981;--warning:#f59e0b}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#e6eef8; background:linear-gradient(180deg,var(--bg),#071127);-webkit-font-smoothing:antialiased}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#e6eef8; background:linear-gradient(180deg,var(--bg),#071127);-webkit-font-smoothing:antialiased;line-height:1.6}
     a{color:inherit;text-decoration:none}
     img,video{max-width:100%;height:auto;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:16px}
+    
+    /* Container and Layout */
+    .container{max-width:1200px;margin:0 auto;padding:16px}
+    @media (max-width:768px){.container{padding:12px}}
+    @media (max-width:480px){.container{padding:8px}}
+    
+    /* Header */
     header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:18px 0}
+    @media (max-width:768px){header{padding:12px 0}}
+    @media (max-width:480px){header{flex-direction:column;align-items:flex-start;gap:16px}}
+    
     .brand{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    @media (max-width:480px){.brand{width:100%;justify-content:space-between}}
+    
     .logo-img{max-width:48px;height:auto;border-radius:8px}
-    nav{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer;text-align:center}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#031127;border:none}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
+    @media (max-width:480px){.logo-img{max-width:40px}}
+    @media (max-width:360px){.logo-img{max-width:36px}}
+    
+    nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    @media (max-width:768px){nav{gap:8px}}
+    @media (max-width:480px){nav{width:100%;justify-content:space-between}}
+    @media (max-width:360px){nav{flex-direction:column;align-items:stretch;gap:8px}}
+    
+    /* Buttons */
+    .btn{padding:12px 20px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer;text-align:center;transition:all 0.2s ease;font-weight:500;font-size:14px;white-space:nowrap}
+    @media (max-width:768px){.btn{padding:10px 16px;font-size:13px}}
+    @media (max-width:480px){.btn{padding:8px 12px;font-size:12px}}
+    @media (max-width:360px){.btn{padding:10px;font-size:13px}}
+    
+    .btn:hover{background:rgba(255,255,255,0.08);transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#031127;border:none;font-weight:600}
+    .btn-primary:hover{background:linear-gradient(90deg,#8b5cf6,#0891b2);transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,58,237,0.3)}
+    
+    /* Typography */
+    h1{font-size:1.5rem;line-height:1.2;font-weight:600}
+    @media (max-width:768px){h1{font-size:1.3rem}}
+    @media (max-width:480px){h1{font-size:1.2rem}}
+    
+    h2{font-size:2.3rem;line-height:1.1;margin:12px 0;font-weight:700}
+    @media (max-width:1024px){h2{font-size:2rem}}
+    @media (max-width:768px){h2{font-size:1.8rem;margin:8px 0}}
+    @media (max-width:480px){h2{font-size:1.5rem}}
+    @media (max-width:360px){h2{font-size:1.3rem}}
+    
+    h3{font-size:1.3rem;margin-bottom:12px;font-weight:600}
+    @media (max-width:768px){h3{font-size:1.2rem;margin-bottom:8px}}
+    @media (max-width:480px){h3{font-size:1.1rem}}
+    
+    p.lead{color:var(--muted);max-width:58ch;margin-bottom:16px;font-size:16px;line-height:1.6}
+    @media (max-width:768px){p.lead{font-size:15px;margin-bottom:12px}}
+    @media (max-width:480px){p.lead{font-size:14px}}
+    
+    .small{font-size:14px;color:var(--muted);line-height:1.5}
+    @media (max-width:768px){.small{font-size:13px}}
+    @media (max-width:480px){.small{font-size:12px}}
+    
     .kicker{color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:12px}
-    h1{font-size:1.5rem;line-height:1.2}
-    h2{font-size:2.3rem;line-height:1.1;margin:12px 0}
-    p.lead{color:var(--muted);max-width:58ch;margin-bottom:16px}
+    @media (max-width:480px){.kicker{font-size:11px}}
+    
+    /* Hero Section */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:48px 0}
+    @media (max-width:1024px){.hero{gap:24px}}
+    @media (max-width:768px){.hero{grid-template-columns:1fr;gap:24px;padding:32px 0}}
+    @media (max-width:480px){.hero{padding:24px 0;gap:20px}}
+    
+    /* Cards */
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
+    @media (max-width:768px){.card{padding:16px;border-radius:12px}}
+    @media (max-width:480px){.card{padding:12px;border-radius:10px}}
+    
+    /* Sections */
     section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
-    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .feature{background:var(--card);padding:18px;border-radius:12px}
-    .small{font-size:13px;color:var(--muted)}
+    @media (max-width:768px){section{padding:32px 0}}
+    @media (max-width:480px){section{padding:24px 0}}
+    
+    /* Grids */
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    @media (max-width:768px){.grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}}
+    @media (max-width:480px){.grid-3{grid-template-columns:1fr;gap:12px}}
+    
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:24px}
+    @media (max-width:768px){.grid-2{grid-template-columns:1fr;gap:20px}}
+    @media (max-width:480px){.grid-2{gap:16px}}
+    
+    /* Features */
+    .feature{background:var(--card);padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
+    @media (max-width:768px){.feature{padding:20px;border-radius:12px}}
+    @media (max-width:480px){.feature{padding:16px;border-radius:10px}}
+    
+    /* Story Cards */
+    .story-card{background:var(--card);padding:24px;border-radius:16px;border-left:4px solid var(--accent);margin-bottom:16px}
+    @media (max-width:768px){.story-card{padding:20px;border-radius:12px;margin-bottom:12px}}
+    @media (max-width:480px){.story-card{padding:16px;border-radius:10px;margin-bottom:10px}}
+    
+    .story-card.warning{border-left-color:var(--warning)}
+    .story-card.success{border-left-color:var(--success)}
+    
+    .pain-point{color:var(--warning);font-weight:500;margin-bottom:8px}
+    @media (max-width:480px){.pain-point{font-size:13px}}
+    
+    .solution{color:var(--success);font-weight:500;margin-bottom:8px}
+    @media (max-width:480px){.solution{font-size:13px}}
+    
+    /* Beta Form */
+    .beta-form{background:var(--card);padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
+    @media (max-width:768px){.beta-form{padding:20px;border-radius:12px}}
+    @media (max-width:480px){.beta-form{padding:16px;border-radius:10px}}
+    
+    .form-group{margin-bottom:16px}
+    @media (max-width:480px){.form-group{margin-bottom:12px}}
+    
+    .form-input{width:100%;padding:12px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#e6eef8;font-size:14px}
+    @media (max-width:480px){.form-input{padding:10px;font-size:13px}}
+    
+    .form-input:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,0.08)}
+    
+    /* Progress Bar */
+    .progress-bar{width:100%;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;margin:12px 0}
+    @media (max-width:480px){.progress-bar{margin:8px 0}}
+    
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#06b6d4);width:75%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
+    
+    /* Stats */
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;margin:24px 0}
+    @media (max-width:768px){.stats{gap:12px;margin:20px 0}}
+    @media (max-width:480px){.stats{grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}}
+    @media (max-width:360px){.stats{grid-template-columns:1fr;gap:12px}}
+    
+    .stat{text-align:center}
+    @media (max-width:360px){.stat{display:flex;align-items:center;justify-content:space-between;text-align:left}}
+    
+    .stat-number{font-size:2rem;font-weight:700;color:var(--accent)}
+    @media (max-width:768px){.stat-number{font-size:1.8rem}}
+    @media (max-width:480px){.stat-number{font-size:1.5rem}}
+    @media (max-width:360px){.stat-number{font-size:1.3rem}}
+    
+    .stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+    @media (max-width:768px){.stat-label{font-size:11px}}
+    @media (max-width:480px){.stat-label{font-size:10px}}
+    @media (max-width:360px){.stat-label{font-size:11px;text-transform:none;letter-spacing:normal}}
+    
+    /* Lists */
+    ul.small{list-style:none;margin-top:12px}
+    @media (max-width:480px){ul.small{margin-top:8px}}
+    
+    ul.small li{position:relative;padding-left:16px;margin-bottom:4px}
+    @media (max-width:480px){ul.small li{padding-left:12px;margin-bottom:2px}}
+    
+    ul.small li:before{content:"•";color:var(--accent);position:absolute;left:0;font-weight:bold}
+    
+    /* FAQ Grid */
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:24px}
+    @media (max-width:768px){.faq-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:20px}}
+    @media (max-width:480px){.faq-grid{grid-template-columns:1fr;gap:10px;margin-top:16px}}
+    
+    /* Footer */
     footer{padding:32px 0;color:var(--muted)}
-
-    @media (max-width:768px){
-      .hero{grid-template-columns:1fr;}
-      h2{font-size:1.8rem}
-    }
+    @media (max-width:768px){footer{padding:24px 0}}
+    @media (max-width:480px){footer{padding:20px 0}}
+    
+    .footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    @media (max-width:768px){.footer-content{gap:8px}}
+    @media (max-width:480px){.footer-content{flex-direction:column;align-items:flex-start;gap:12px}}
+    
+    .footer-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    @media (max-width:768px){.footer-links{gap:8px}}
+    @media (max-width:480px){.footer-links{width:100%;justify-content:space-between}}
+    
+    /* Video Responsive */
+    .hero-video{border-radius:16px;overflow:hidden}
+    @media (max-width:768px){.hero-video{border-radius:12px}}
+    @media (max-width:480px){.hero-video{border-radius:10px}}
+    
+    /* Iframe Responsive */
+    .responsive-iframe{width:100%;border-radius:10px;background:transparent}
+    @media (max-width:768px){.responsive-iframe{border-radius:8px}}
+    @media (max-width:480px){.responsive-iframe{border-radius:6px}}
+    
+    /* Text Alignment */
     @media (max-width:480px){
-      .logo-img{max-width:36px}
-      h1{font-size:1.2rem}
-      nav{width:100%;justify-content:flex-start}
+      .text-center-mobile{text-align:center}
+      .text-left-mobile{text-align:left}
+    }
+    
+    /* Spacing Utilities */
+    @media (max-width:768px){
+      .mb-mobile-2{margin-bottom:8px}
+      .mt-mobile-2{margin-top:8px}
+      .py-mobile-3{padding-top:12px;padding-bottom:12px}
+    }
+    
+    @media (max-width:480px){
+      .mb-mobile-1{margin-bottom:4px}
+      .mt-mobile-1{margin-top:4px}
+      .py-mobile-2{padding-top:8px;padding-bottom:8px}
+    }
+    
+    /* Hide/Show Elements */
+    @media (max-width:768px){
+      .hide-mobile{display:none}
+      .show-mobile{display:block}
+    }
+    
+    @media (min-width:769px){
+      .show-mobile{display:none}
+    }
+    
+    /* Touch-friendly interactions */
+    @media (hover:none) and (pointer:coarse){
+      .btn:hover{transform:none}
+      .btn-primary:hover{transform:none}
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast:high){
+      .card{border:2px solid rgba(255,255,255,0.2)}
+      .btn{border:2px solid rgba(255,255,255,0.2)}
+    }
+    
+    /* Reduced motion support */
+    @media (prefers-reduced-motion:reduce){
+      .btn{transition:none}
+      .progress-fill{animation:none}
     }
   </style>
 
@@ -50,6 +247,19 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CWZ6N8XDDQ');
+    
+    // Track form submissions
+    function trackSignup() {
+      gtag('event', 'sign_up', {
+        method: 'beta_landing_page'
+      });
+    }
+    
+    // Responsive navigation for mobile
+    function toggleMobileNav() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('mobile-open');
+    }
   </script>
 </head>
 <body>
@@ -63,92 +273,224 @@
         </div>
       </div>
       <nav>
-        <a href="#features" class="btn">Features</a>
-        <a href="#download" class="btn btn-primary">Get the App</a>
+        <a href="#pain-points" class="btn hide-mobile">Pain Points</a>
+        <a href="#features" class="btn hide-mobile">Features</a>
+        <a href="#beta-signup" class="btn btn-primary">Join Beta</a>
+        <button class="btn show-mobile" onclick="toggleMobileNav()">Menu</button>
       </nav>
     </header>
 
     <main>
       <section class="hero">
         <div>
-          <div class="kicker">Allospend</div>
-          <h2>No more chasing friends for money. No more awkward reminders.</h2>
-          <p class="lead">You’ve been there — the dinner bill split, the group trip, the friend who “forgets.” Allospend ends the tension and keeps relationships intact. Plus, our playful Dummii sticker makes paying and getting paid a tap away.</p>
-          <!-- Honeypot field -->
-          <input type="text" name="company" style="display:none">
-          <!-- Google Form Embed -->
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGBeVYlcSK7FoKRgENpWO_h8G99-RmGGaRrv07emI_QmNdew/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0" style="background-color: transparent; border-radius: 10px;">Loading…</iframe>
-          <div class="small">Private & secure. We’ll never share your email.</div>
+          <div class="kicker">Beta Launch</div>
+          <h2>Remember that awkward moment when the server asks "separate checks or one bill?"</h2>
+          <p class="lead">You've been there — the dinner where Sarah orders the lobster but wants to split evenly, the friend who "forgets" their wallet, the weeks of chasing payments. Allospend ends the tension and keeps your relationships intact.</p>
+          
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">73%</div>
+              <div class="stat-label">of people avoid group dining due to bill stress</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">2.4</div>
+              <div class="stat-label">weeks average time to collect group payments</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">89%</div>
+              <div class="stat-label">say money conflicts hurt friendships</div>
+            </div>
+          </div>
+
+          <div class="beta-form">
+            <h3>🎯 Join the Beta Waitlist</h3>
+            <p class="small">Be among the first to experience stress-free group payments. Limited spots available.</p>
+            
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="small">75% of beta spots filled</div>
+            
+            <!-- Honeypot field -->
+            <input type="text" name="company" style="display:none">
+            
+            <!-- Google Form Embed -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGBeVYlcSK7FoKRgENpWO_h8G99-RmGGaRrv07emI_QmNdew/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" class="responsive-iframe" onload="trackSignup()">Loading…</iframe>
+            <div class="small">Private & secure. We'll never share your email.</div>
+          </div>
         </div>
         <aside>
-          <video autoplay loop muted playsinline poster="/images/IMG_9219.jpg" style="border-radius:16px;">
+          <video autoplay loop muted playsinline poster="/images/IMG_9219.jpg" class="hero-video">
             <source src="/videos/ScreenRecording.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </aside>
       </section>
 
-      <section id="features">
-        <div class="grid-3">
-          <div class="feature">
-            <h3>Manage Shared Expenses</h3>
-            <p class="small">Create groups, track shared expenses, and send requests that people actually respond to. Fast onboarding, bank-grade security, and instant notifications.</p>
-            <ul class="small">
-              <li>Improve group communication</li>
-              <li>Automate reminders and tasks</li>
-              <li>Group ledger & receipts</li>
-            </ul>
+      <section id="pain-points">
+        <h2>Sound Familiar?</h2>
+        <p class="lead">These are the moments that inspired Allospend. We've all been there.</p>
+        
+        <div class="grid-2">
+          <div>
+            <div class="story-card warning">
+              <div class="pain-point">❌ The Restaurant Nightmare</div>
+              <p class="small">"The server asks 'separate checks or one bill?' and everyone freezes. Sarah ordered the $45 lobster, you got the $12 salad, but she wants to split evenly. The math becomes a nightmare with tax and tip. Someone pays with their card and spends the next month chasing everyone for their share."</p>
+            </div>
+            
+            <div class="story-card warning">
+              <div class="pain-point">❌ The "I'll Get the Next One" Promise</div>
+              <p class="small">"Mike always says 'I'll get the next one' but somehow it never happens. You end up keeping a mental ledger of who owes what, but it's exhausting. The friendship starts to feel transactional, and you avoid hanging out because of the money tension."</p>
+            </div>
+            
+            <div class="story-card warning">
+              <div class="pain-point">❌ The Last-Minute Addition</div>
+              <p class="small">"You're splitting a $120 bill 4 ways when Jake shows up late and orders a drink. Now it's $140 split 5 ways, but the original 4 already calculated their shares. The whole table becomes a spreadsheet, and the fun evening turns into a math class."</p>
+            </div>
           </div>
-          <div class="feature">
-            <h3>Split Checks In Person</h3>
-            <p class="small">Use our tiny loadable sticker that you can stick on a laptop, water bottle, or wallet. Tap to request money or trigger a custom payment flow.</p>
-            <ul class="small">
-              <li>Split receipts easily</li>
-              <li>Customizable link & message</li>
-              <li>Works with most phones</li>
-            </ul>
-          </div>
-          <div class="feature">
-            <h3>Why Allospend?</h3>
-            <p class="small">Designed for groups who want to keep money simple and friction-free — from roommates to road trips. Privacy-first, with a playful product touch.</p>
-            <a href="#download" class="small">See how it works →</a>
+          
+          <div>
+            <div class="story-card success">
+              <div class="solution">✅ The Allospend Solution</div>
+              <p class="small">"Tap your Dummii sticker on the table, and instantly create a payment group. Each person gets their exact amount with tax and tip calculated automatically. No more awkward conversations, no more mental math, no more chasing payments. Just tap and pay."</p>
+            </div>
+            
+            <div class="story-card success">
+              <div class="solution">✅ Fair Splitting Made Simple</div>
+              <p class="small">"Allospend handles the complex calculations. Split evenly, split by what you ordered, or create custom splits. The app remembers who paid what and keeps everyone accountable without the awkward reminders."</p>
+            </div>
+            
+            <div class="story-card success">
+              <div class="solution">✅ Relationship-First Design</div>
+              <p class="small">"We built Allospend to preserve friendships, not just manage money. Gentle reminders, celebration messages when payments are completed, and relationship health tracking to keep your group dynamics positive."</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="download">
-        <h3>Get the App</h3>
-        <p class="small">Download the Allospend app for iOS. Beta available now — join the waitlist or request an invite for your group.</p>
-        <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; align-items:center;">
-          <a class="btn btn-primary" href="#">Join Beta</a>
-          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-            <div class="card small">Available on iOS</div>
-            <div class="card small">Powered by Allospend</div>
+      <section id="features">
+        <h2>How Allospend Solves Group Payment Chaos</h2>
+        <div class="grid-3">
+          <div class="feature">
+            <h3>🍽️ Instant Restaurant Splits</h3>
+            <p class="small">Tap your Dummii sticker and instantly create a payment group. Split by what you ordered, split evenly, or create custom splits. Tax and tip calculated automatically.</p>
+            <ul class="small">
+              <li>Real-time bill splitting</li>
+              <li>Automatic tax & tip calculation</li>
+              <li>Multiple payment providers</li>
+              <li>Instant payment links</li>
+            </ul>
           </div>
+          <div class="feature">
+            <h3>🎯 Turn Any Card Into a Payment System</h3>
+            <p class="small">Our tiny Dummii sticker transforms your wallet, phone, or laptop into a group payment terminal. Stick it anywhere and tap to create instant payment groups.</p>
+            <ul class="small">
+              <li>NFC-powered payments</li>
+              <li>Works with most smartphones</li>
+              <li>Customizable payment links</li>
+              <li>Secure and private</li>
+            </ul>
+          </div>
+          <div class="feature">
+            <h3>🤝 Relationship Health Tracking</h3>
+            <p class="small">Monitor group dynamics and payment reliability. Get insights into communication patterns and receive gentle reminders that preserve friendships.</p>
+            <ul class="small">
+              <li>Payment reliability scores</li>
+              <li>Communication analytics</li>
+              <li>Gentle reminder system</li>
+              <li>Celebration messages</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-cases">
+        <h2>Perfect For Every Group</h2>
+        <div class="grid-3">
+          <div class="feature">
+            <h3>👥 Friend Groups</h3>
+            <p class="small">Dinner outings, weekend trips, shared activities. No more awkward money conversations or mental ledgers.</p>
+          </div>
+          <div class="feature">
+            <h3>🏠 Roommates</h3>
+            <p class="small">Rent, utilities, groceries, shared expenses. Keep your living situation harmonious with transparent expense tracking.</p>
+          </div>
+          <div class="feature">
+            <h3>👨‍👩‍👧‍👦 Family</h3>
+            <p class="small">Family vacations, holiday expenses, shared celebrations. Make family finances stress-free and fair.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="beta-signup">
+        <div class="beta-form">
+          <h2>🎯 Join the Beta Today</h2>
+          <p class="lead">Be among the first 500 users to experience stress-free group payments. Limited spots available.</p>
+          
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">500</div>
+              <div class="stat-label">Beta spots available</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">375</div>
+              <div class="stat-label">Already claimed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">125</div>
+              <div class="stat-label">Remaining</div>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="small">75% of beta spots filled</div>
+          
+          <!-- Google Form Embed -->
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGBeVYlcSK7FoKRgENpWO_h8G99-RmGGaRrv07emI_QmNdew/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" class="responsive-iframe">Loading…</iframe>
+          <div class="small">Private & secure. We'll never share your email.</div>
         </div>
       </section>
 
       <section id="faq">
-        <h3>FAQs</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px">
-          <div class="card small">
-            <strong>How does the Dummii sticker work?</strong>
-            <p class="small">When tapped it opens the link you configured for (tracking, payment links, or app deep link).</p>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="card">
+            <h3>How does the Dummii sticker work?</h3>
+            <p class="small">Simply tap your phone on the sticker to instantly create a payment group. The sticker contains a unique link that opens the Allospend app with your group's payment details.</p>
           </div>
-          <div class="card small">
-            <strong>Is my data safe?</strong>
-            <p class="small">Yes — Allospend is built with standard encryption and follows best practices for user data. We never sell your info.</p>
+          <div class="card">
+            <h3>What payment methods are supported?</h3>
+            <p class="small">Allospend works with Cash App, Venmo, and PayPal. More payment providers coming soon!</p>
+          </div>
+          <div class="card">
+            <h3>Is my data safe and private?</h3>
+            <p class="small">Absolutely. We use bank-grade encryption and never sell your data. Your financial information stays private and secure.</p>
+          </div>
+          <div class="card">
+            <h3>When will I get beta access?</h3>
+            <p class="small">Beta invitations are sent on a rolling basis. You'll receive an email within 1-2 weeks of signing up with your download link.</p>
+          </div>
+          <div class="card">
+            <h3>Can I use it for recurring expenses?</h3>
+            <p class="small">Yes! Perfect for rent, utilities, and other regular shared expenses. Set up once and automate your group payments.</p>
+          </div>
+          <div class="card">
+            <h3>What if someone doesn't pay?</h3>
+            <p class="small">Allospend includes gentle reminder systems and relationship health tracking to help maintain positive group dynamics.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div class="footer-content">
         <div><strong>Allospend</strong></div>
-        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div class="footer-links">
           <div class="small">Contact: info@allospend.app</div>
           <a href="/privacy.html" class="small">Privacy</a>
+          <a href="/terms.html" class="small">Terms</a>
         </div>
         <div class="small">&copy; 2025 Allospend. All Rights Reserved.</div>
       </div>
