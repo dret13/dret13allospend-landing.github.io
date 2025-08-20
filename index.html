@@ -251,6 +251,105 @@
       .btn{transition:none}
       .progress-fill{animation:none}
     }
+
+    /* Video Container and Tabs */
+    .video-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .video-tabs {
+      display: flex;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .video-tab {
+      flex: 1;
+      padding: 12px 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .video-tab:hover {
+      background: rgba(112,150,209,0.1);
+      color: var(--text-primary);
+    }
+
+    .video-tab.active {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .tab-icon {
+      font-size: 16px;
+    }
+
+    .tab-text {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .tab-text {
+        display: inline;
+      }
+      
+      .video-tab {
+        padding: 14px 20px;
+        font-size: 15px;
+      }
+    }
+
+    .video-wrapper {
+      position: relative;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        margin-top: 44px;
+      }
+    }
+
+    .hero-video {
+      width: 100%;
+      height: auto;
+      display: none;
+      border-radius: 0 0 16px 16px;
+    }
+
+    .hero-video.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero-video {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-video {
+        border-radius: 0 0 10px 10px;
+      }
+    }
+
   </style>
 
   <!-- Google Analytics -->
@@ -273,6 +372,39 @@
       const nav = document.querySelector('nav');
       nav.classList.toggle('mobile-open');
     }
+
+    // Video switching functionality
+    function switchVideo(tool) {
+      // Update tab states
+      document.querySelectorAll('.video-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(`tab-${tool}`).classList.add('active');
+      
+      // Update video states
+      document.querySelectorAll('.hero-video').forEach(video => {
+        video.classList.remove('active');
+        video.pause();
+      });
+      
+      const activeVideo = document.getElementById(`video-${tool}`);
+      activeVideo.classList.add('active');
+      activeVideo.play();
+      
+      // Track video switch for analytics
+      gtag('event', 'video_switch', {
+        tool: tool
+      });
+    }
+
+    // Auto-play the first video on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const firstVideo = document.getElementById('video-tool1');
+      if (firstVideo) {
+        firstVideo.play();
+      }
+    });
+
   </script>
 </head>
 <body>
@@ -333,10 +465,30 @@
           </div>
         </div>
         <aside>
-          <video autoplay loop muted playsinline poster="/images/IMG_9219.jpg" class="hero-video">
-            <source src="/videos/ScreenRecording2.MP4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="video-container">
+            <div class="video-tabs">
+              <button class="video-tab active" onclick="switchVideo('tool1')" id="tab-tool1">
+                <span class="tab-icon">💳</span>
+                <span class="tab-text">NFC Payments</span>
+              </button>
+              <button class="video-tab" onclick="switchVideo('tool2')" id="tab-tool2">
+                <span class="tab-icon">📱</span>
+                <span class="tab-text">Group Management</span>
+              </button>
+            </div>
+            
+            <div class="video-wrapper">
+              <video autoplay loop muted playsinline poster="/images/IMG_9219.jpg" class="hero-video active" id="video-tool1">
+                <source src="/videos/ScreenRecording2.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              
+              <video autoplay loop muted playsinline poster="/images/IMG_9219.jpg" class="hero-video" id="video-tool2">
+                <source src="/videos/ScreenRecording3.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </aside>
       </section>
 
@@ -417,7 +569,7 @@
       </section>
 
       <section id="use-cases">
-        <h2>Perfect For Every Group You Lead</h2>
+        <h2>Perfect For Every Group You Care About</h2>
         <div class="grid-3">
           <div class="feature">
             <h3>Your Friend Groups</h3>
